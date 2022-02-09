@@ -1,0 +1,15 @@
+.git
+
+.idea/
+*.upload.marker
+.vscode/
+
+cmake-build-*/
+
+defs.mk
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+build
+kern/compile/[a-zA-Z]*

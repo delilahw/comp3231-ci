@@ -1,0 +1,20 @@
+name: Mirror
+
+on: [push, delete]
+
+jobs:
+  to_gitlab:
+    name: Mirror to UNSW GitLab
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: hellodavie/repository-mirroring-action@master
+      with:
+        target_repo_url:
+          gitlab@gitlab.cse.unsw.edu.au:COMP3231/21T1/grp249-asst3.git
+        ssh_private_key:
+          ${{ secrets.GITLAB_SSH_PRIVATE_KEY }}
+        ssh_username:
+          gitlab
